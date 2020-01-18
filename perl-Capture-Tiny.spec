@@ -1,5 +1,5 @@
 Name:           perl-Capture-Tiny
-Version:        0.22
+Version:        0.24
 Release:        1%{?dist}
 Summary:        Capture STDOUT and STDERR from Perl, XS or external programs
 License:        ASL 2.0
@@ -14,6 +14,7 @@ BuildRequires:  perl(warnings)
 # Run-time:
 BuildRequires:  perl(Carp)
 BuildRequires:  perl(Exporter)
+BuildRequires:  perl(Fcntl)
 BuildRequires:  perl(File::Spec)
 BuildRequires:  perl(File::Temp)
 BuildRequires:  perl(IO::Handle)
@@ -25,6 +26,7 @@ BuildRequires:  perl(lib)
 BuildRequires:  perl(IO::File)
 BuildRequires:  perl(List::Util)
 BuildRequires:  perl(Test::More) >= 0.62
+BuildRequires:  perl(version)
 # Optional tests:
 BuildRequires:  perl(Inline)
 BuildRequires:  perl(Inline::C)
@@ -60,6 +62,13 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Mon Feb 10 2014 Petr Šabata <contyk@redhat.com> - 0.24-1
+- Fix #1062427 / CVE-2014-1875
+- Fix a bogus date in changelog
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.22-2
+- Mass rebuild 2013-12-27
+
 * Thu Mar 28 2013 Petr Pisar <ppisar@redhat.com> - 0.22-1
 - 0.22 bump
 
@@ -130,7 +139,7 @@ make test
 * Fri Apr 30 2010 Marcela Maslanova <mmaslano@redhat.com> - 0.07-2
 - Mass rebuild with perl-5.12.0
 
-* Wed Jan  7 2010 Marcela Mašláňová <mmaslano@redhat.com> - 0.07-1
+* Wed Jan 27 2010 Marcela Mašláňová <mmaslano@redhat.com> - 0.07-1
 - update
 
 * Mon Dec  7 2009 Stepan Kasal <skasal@redhat.com> - 0.06-2
